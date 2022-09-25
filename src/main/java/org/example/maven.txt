@@ -1,0 +1,49 @@
+ POM xml Files.
+  POM is an acronym for Project Object Model.
+  The pom.xml file contains information of project and configuration information for the maven to build the project
+  such as dependencies, build directory, source directory, test source directory, plugin, goals etc.
+  Types.
+1. Simple POM File
+file generated when creating a Maven project.
+2. Super POM
+All the POM files.
+3. Effective POM
+combination of simple and super POM.
+
+Dependencies.
+Are external JAR files (Java libraries) that your project uses.
+If the dependencies are not found in the local Maven repository,
+ Maven downloads them from a central Maven repository and puts them in your local repository.
+ The local repository is just a directory on your computer's hard disk.
+ -
+Download from the MVNrepository.com
+Transitive Dependencies.Dependencies of other dependencies.
+1.Snapshot Dependencies.
+Created when the software is under development. Unstable
+2. Release Dependencies.
+Created after the software is developed and ready for release. Stable.
+
+Dependency Scopes.
+1. Compile
+2. Provided. provided by JDK or runtime, available at compile time but not at runtime. e.g. servlet.
+3. Runtime. Example, mysql-connector dependency.
+4. Test. example, junit and springBoot
+5. System. Path to the JAR provided manually using <systemPath>
+
+Repositories.... where maven stores the dependencies.
+1. Local Repository... Folder inside the Machine running Maven, e.g, <User-Home>/.m2
+2. Remote Repository... Remote website where we can download the dependencies. e.g. Maven website
+
+Build Lifecycle.
+1. Default... validate,compile,test,package,integration-test,verify,install,deploy.
+2. Clean
+3. Site
+
+Plugins and Goals.
+Plugin enables us to run the lifecycle phases in the Maven project. Each pliggin is associated with a GOAL,
+which is linked to the lifecycle phase (ex: compile).
+Defined inside <plugin> section, under the <build> tag
+1. Maven Compiler Plugin...compiles our java files, similar to running javac<java-class-name>
+2. Maven Surefire Plugin.... runs inside our project, generates Test Reports.
+3. Maven Install Plugin... packages source code into an artifact and installs it into the Local Repository.
+4. Maven Deploy Plugin... Deploys the created artifact into the Remote Repository.
